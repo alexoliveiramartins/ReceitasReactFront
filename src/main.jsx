@@ -7,6 +7,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { ProductsMain } from './components/ProductsMain.jsx';
+import { LoginMain } from './components/LoginMain.jsx';
+import NoPage from './components/NoPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +22,18 @@ const router = createBrowserRouter([
       {
         path: "/receitas",
         element: <ProductsMain />
+      },
+      {
+        path: "/login",
+        element: <LoginMain />
+      },
+      {
+        path: "/register",
+        element: <h1>Registro</h1>
+      },
+      {
+        path: "*",
+        element: <NoPage />
       }
     ]
   }

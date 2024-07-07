@@ -14,7 +14,7 @@ export function ProductsMain() {
     }, []);
 
     return (
-        <main className="flex flex-wrap gap-4 justify-center">
+        <main className="mt-3 flex flex-wrap gap-4 justify-center">
             {meals.map((meal, index) => (
                 <Product 
                     key={index} 

@@ -14,14 +14,14 @@ export function ProductsMain() {
     }, []);
 
     return (
-        <main className="flex flex-wrap gap-4">
+        <main className="flex flex-wrap gap-4 justify-center">
             {meals.map((meal, index) => (
                 <Product 
                     key={index} 
                     image={`${meal.strMealThumb}`}
                     title={meal.strMeal} 
                     description={meal.strInstructions} 
-                    price={3} // Assuming price is not available in the API response
+                    type={meal.strCategory}
                 />
             ))}
         </main>

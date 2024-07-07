@@ -1,6 +1,6 @@
 // themealdb.com/api/json/v1/1/search.php?f=a
 
-const api = 'https://www.themealdb.com/api/json/v1/1/search.php?f=p'
+const api = 'https://www.themealdb.com/api/json/v1/1/search.php?f=s'
 
 function naoEhNulo(valor) {
     return valor !== null && valor !== '' && valor !== ' ';

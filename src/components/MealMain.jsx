@@ -1,30 +1,40 @@
-import React, { useEffect, useState } from "react";
-import { Meal } from "./Meal";
-import { fetchMeals } from "../fetchMeals.js";
+import React, { useState, useEffect } from 'react';
+import { Meal } from './Meal';
+import { fetchRecipes } from '../fetchRecipe';
 
 export function MealMain() {
     const [meals, setMeals] = useState([]);
 
     useEffect(() => {
-        async function loadMeals() {
-            const fetchedMeals = await fetchMeals();
-            setMeals(fetchedMeals);
+        async function getMeals() {
+            try {
+                const fetchedMeals = await fetchRecipes();
+                setMeals(fetchedMeals);
+            } catch (error) {
+                console.error('Error fetching meals:', error);
+                // Optionally, handle the error state or show an error message to the user
+            }
         }
-        loadMeals();
+        getMeals();
     }, []);
 
     return (
-        <main className="flex flex-col gap-4">
-            <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
-                {meals.map((meal) => (
-                    <Meal
-                        key={meal.idMeal}
-                        image={meal.strMealThumb}
-                        title={meal.strMeal}
-                        description={meal.strInstructions}
+        <main className="mt-3 flex flex-wrap gap-4 justify-center">
+            {meals && meals.length > 0 ? (
+                meals.map((meal, index) => (
+                    <Meal 
+                        key={index} 
+                        nome={meal.nome} 
+                        categoria={meal.categoria}
+                        origem={meal.origem}
+                        ingredientes={meal.ingredientes}
+                        modoDePreparo={meal.modoDePreparo}
+                        pathImagem={meal.pathImagem}
                     />
-                ))}
-            </div>
+                ))
+            ) : (
+                <p>Nenhuma receita encontrada.</p>
+            )}
         </main>
     );
 }

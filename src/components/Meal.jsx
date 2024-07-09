@@ -1,25 +1,20 @@
-import React from "react"
+import React from "react";
 
-export function Meal({image, title, description, price}){
-
+export function Meal({ nome, categoria, origem, ingredientes, modoDePreparo, pathImagem }) {
     return (
-        <div className="w-80 h-full aspect-square flex flex-col items-center p-2.5 gap-2.5 ring-1 ring-black/30 rounded">
-            <figure className="">
-                <img src={image} alt={description} className="h-44" />
+        <div className="w-80 h-full flex flex-col items-center p-2.5 gap-2.5 ring-1 ring-black/30 rounded overflow-hidden transform transition-transform duration-300 hover:scale-105 bg-white">
+            <figure className="rounded-lg overflow-hidden">
+                <img src={pathImagem} alt={nome} className="h-44" />
             </figure>
             <h2 className="text-xl font-bold text-center">
-                {title.length > 20 ? title.slice(0, 20) + '...' : title}
+                {nome.length > 20 ? nome.slice(0, 20) + '...' : nome}
             </h2>
             <p className="text-center">
-                {description.length > 100 ? description.slice(0, 100) + '...' : description}
+                {modoDePreparo.length > 100 ? modoDePreparo.slice(0, 100) + '...' : modoDePreparo}
             </p>
             <p className="text-center font-thin text-2xl border-y-[1px] border-y-black/30 w-full p-2">
-                $ {price.toFixed(2)}
+                {categoria}
             </p>
-            <div className="flex gap-2.5 flex-wrap justify-center items-center">
-                <button className="text-white font-bold bg-black/80 rounded p-2 cursor-pointer text-center hover:bg-black/100 transition-all">Comprar agora</button>
-                <button className="text-white font-bold bg-black/80 rounded p-2 cursor-pointer text-center hover:bg-black/100 transition-all">Adicionar ao carrinho</button>
-            </div>
         </div>
-    )
+    );
 }

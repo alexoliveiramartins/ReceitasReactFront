@@ -8,7 +8,8 @@ import {
 } from "react-router-dom";
 import { LoginMain } from './components/LoginMain.jsx';
 import NoPage from './components/NoPage.jsx';
-import { MealMain } from './components/MealMain.jsx';
+import { MealMain } from './components/Receitas/ReceitasMain.jsx';
+import { Inicio } from './components/MainPage/Inicio.jsx';
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <h1>Inicio</h1>
+        element: <Inicio />
       },
       {
         path: "/receitas",

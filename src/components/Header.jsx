@@ -4,7 +4,7 @@ export default function Header({title}){
   return (
     <div>
       
-      <header className="p-5 flex items-center justify-between bg-green-700 border-transparent font-poppings align-middle">
+      <header className="p-5 flex items-center justify-between bg-lime-600 border-transparent font-poppings align-middle">
         <h1 className="text-4xl"><NavLink to="/">{title}</NavLink></h1>
         <nav className="flex items-center">
           <ul className="flex gap-2.5 font-sans text-2xl">

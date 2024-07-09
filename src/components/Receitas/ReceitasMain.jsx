@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Meal } from './Meal';
-import { fetchRecipes } from '../fetchRecipe';
+import { Meal } from './ReceitaCard';
+import { fetchRecipes } from '../../fetchRecipe';
 
 export function MealMain() {
     const [meals, setMeals] = useState([]);

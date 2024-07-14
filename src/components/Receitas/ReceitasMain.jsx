@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Meal } from './ReceitaCard';
 import { fetchRecipes } from '../../fetchRecipe';
 
-export function MealMain() {
+export function ReceitasMain() {
     const [meals, setMeals] = useState([]);
-
+    const api = 'http://localhost:8080/api/receitas'
     useEffect(() => {
         async function getMeals() {
             try {
-                const fetchedMeals = await fetchRecipes();
+                const fetchedMeals = await fetchRecipes(api);
                 setMeals(fetchedMeals);
             } catch (error) {
                 console.error('Error fetching meals:', error);
@@ -28,7 +28,7 @@ export function MealMain() {
                         categoria={meal.categoria}
                         origem={meal.origem}
                         ingredientes={meal.ingredientes}
-                        modoDePreparo={meal.modoDePreparo}
+                        descricao={meal.descricao}
                         pathImagem={meal.pathImagem}
                     />
                 ))

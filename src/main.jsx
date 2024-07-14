@@ -8,8 +8,9 @@ import {
 } from "react-router-dom";
 import { LoginMain } from './components/LoginMain.jsx';
 import NoPage from './components/NoPage.jsx';
-import { MealMain } from './components/Receitas/ReceitasMain.jsx';
+import { ReceitasMain } from './components/Receitas/ReceitasMain.jsx';
 import { Inicio } from './components/MainPage/Inicio.jsx';
+import ReceitasPage from './components/Receitas/ReceitasPage.jsx';
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/receitas",
-        element: <MealMain />
+        element: <ReceitasMain />
       },
       {
         path: "/login",
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <h1>Registro</h1>
+      },
+      {
+        path: "/receitas/:nome",
+        element: <ReceitasPage></ReceitasPage>
       },
       {
         path: "*",

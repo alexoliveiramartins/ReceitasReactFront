@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { fetchRecipes } from "../../fetchRecipe";
 import { useParams } from "react-router-dom";
+import "./ReceitasPage.css";
+
 
 export default function ReceitasPage(){
     const { nome } = useParams();
@@ -32,13 +34,14 @@ export default function ReceitasPage(){
     return (
         <>
             <div className="flex flex-col items-center justify-center">
+                
                 <div className="flex flex-row items-center space-x-2 py-6">
                     <h1 className="text-4xl">{receita.nome}</h1>
                     <img className="size-9" src={`https://flagsapi.com/${receita.origem}/shiny/64.png`} />
                 </div>
-
+                
                 <figure>
-                    <img src={`${receita.pathImagem}`} className="shrink w-full" />
+                    <img src={`${receita.pathImagem}`} className="" />
                 </figure>
                 
                 <h1 className="font-light">{receita.categoria}</h1>

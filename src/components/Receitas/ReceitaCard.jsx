@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export function Meal({ nome, categoria, origem, ingredientes, modoDePreparo, pathImagem, descricao}) {
     return (
-        <div className="w-80 h-full flex flex-col items-center p-2.5 gap-2.5 ring-1 ring-black/30 rounded overflow-hidden transform transition-transform duration-300 hover:scale-105 bg-white">
+        <div className="w-80 flex flex-col items-center p-2.5 gap-2.5 ring-1 ring-black/30 rounded overflow-hidden transform transition-transform duration-300 hover:scale-105 bg-white">
             <figure className="rounded-lg overflow-hidden">
             <NavLink to={`/receitas/${nome}`}><img src={pathImagem} alt={nome} className="h-44" /></NavLink>
             </figure>

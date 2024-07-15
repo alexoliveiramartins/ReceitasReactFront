@@ -1,30 +1,38 @@
-import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import "./SearchBar.css";
 
-export default function SearchBar({title}){
+
+export const SearchBar = ({ setResults }) => {
+  const [input, setInput] = useState("");
+
+  const fetchData = (value) => {
+    fetch('http://localhost:8080/api/receitas')
+      .then((response) => response.json())
+      .then((json) => {
+        const results = json.filter((receita) => {
+          return (
+            value &&
+            receita &&
+            receita.nome &&
+            receita.nome.toLowerCase().includes(value)
+          );
+        });
+        setResults(results);
+      });
+  };
+
+  const handleChange = (value) => {
+    setInput(value);
+    fetchData(value);
+  };
+
   return (
-    <>
-        <form>
-            <div 
-            class="Search"
-            className="flex 
-            flex-row
-            font-poppings
-            p-2">
-              <input 
-                className="w-full 
-                p-2 rounded-md ring-[1px] 
-                ring-black/30 focus:pl-4 
-                transition-all" 
-                name="" 
-                placeholder="Pesquisar Receita" />
-              <button className="p-3 
-                bg-slate-900
-                text-slate-200
-                rounded-md
-                ml-3
-              ">Pesquisar</button>
-            </div>
-        </form>
-    </>
-  )
-}
+    <div className="input-wrapper">
+      <input
+        placeholder="Pesquisar"
+        value={input}
+        onChange={(e) => handleChange(e.target.value)}
+      />
+    </div>
+  );
+};

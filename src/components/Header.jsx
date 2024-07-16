@@ -4,7 +4,7 @@ export default function Header({title}){
   return (
     <div>
       
-      <header className="flex px-2 items-center justify-between bg-lime-600 font-poppings">
+      <header className="flex px-2 items-center justify-between bg-green-800 font-poppings">
         <NavLink to="/">
           <img src="../src/imagens/logo.png" className="size-12"/>
         </NavLink>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Meal } from './ReceitaCard';
 import { fetchRecipes } from '../../fetchRecipe';
+import { useParams } from 'react-router-dom';
 
-export function ReceitasMain() {
+export function ReceitasResult() {
+    const { ingredientes } = useParams();
     const [meals, setMeals] = useState([]);
-    const api = 'http://localhost:8080/api/receitas'
+    const api = `http://localhost:8080/api/receitas/search?ingredientes=${ingredientes}`
     useEffect(() => {
         async function getMeals() {
             try {
@@ -15,6 +17,7 @@ export function ReceitasMain() {
             }
         }
         getMeals();
+        // console.log(meals);
     }, []);
 
     return (
@@ -22,7 +25,7 @@ export function ReceitasMain() {
             {meals && meals.length > 0 ? (
                 meals.map((meal, index) => (
                     <Meal 
-                        key={index} 
+                        key={index}
                         nome={meal.nome} 
                         categoria={meal.categoria}
                         origem={meal.origem}

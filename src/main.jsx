@@ -11,6 +11,7 @@ import NoPage from './components/NoPage.jsx';
 import { ReceitasMain } from './components/Receitas/ReceitasMain.jsx';
 import { Inicio } from './components/MainPage/Inicio.jsx';
 import ReceitasPage from './components/Receitas/ReceitasPage.jsx';
+import { ReceitasResult } from './components/Receitas/ReceitasResult.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/receitas/:nome",
         element: <ReceitasPage></ReceitasPage>
+      },
+      {
+        path: "/receitas/search",
+        element: <ReceitasResult></ReceitasResult>
       },
       {
         path: "*",

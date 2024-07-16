@@ -3,7 +3,8 @@
 
 // const api = 'http://localhost:8080/api/receitas?ingredientes=Cebola&ingredientes=Alho'
 
-// fetchRecipes();
+// fetchRecipes("http://localhost:8080/api/receitas?ingredientes=Alho,Abóbora,Cebola,Caldo de legumes,Creme de leite");
+
 
 export async function fetchRecipes(api){
     

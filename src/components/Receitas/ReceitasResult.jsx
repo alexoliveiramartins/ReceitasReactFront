@@ -5,8 +5,12 @@ import { useParams } from 'react-router-dom';
 
 export function ReceitasResult() {
     const { ingredientes } = useParams();
+    console.log(ingredientes);
+    const ingredientesArgumentos = window.location.search;
+    console.log(ingredientesArgumentos);
     const [meals, setMeals] = useState([]);
-    const api = `http://localhost:8080/api/receitas/search?ingredientes=${ingredientes}`
+    const api = `http://localhost:8080/api/receitas${ingredientesArgumentos}`
+    console.log(api);
     useEffect(() => {
         async function getMeals() {
             try {

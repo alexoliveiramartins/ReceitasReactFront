@@ -52,7 +52,6 @@ export default function Tag(){
                     </li>)
                 }
             </ul>
-            <button onClick={a}>AAA</button>
         </div>
     </>
     );

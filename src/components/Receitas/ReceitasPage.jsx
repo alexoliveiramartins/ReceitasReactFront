@@ -33,27 +33,27 @@ export default function ReceitasPage(){
     
     return (
         <>
-            <div className="flex flex-col items-center justify-center font-poppings">
-                
-                <div className="flex flex-row items-center space-x-2 py-1">
+            <div className="TUDO flex flex-col items-center justify-center font-poppings">
+                <div className="TITULO-E-BANDEIRA flex flex-row items-center space-x-2 py-1">
                     <h1 className="text-4xl">{receita.nome}</h1>
                     <img className="size-9" src={`https://flagsapi.com/${receita.origem}/shiny/64.png`} />
                 </div>
-                <h1 className="font-light py-1">{receita.categoria}</h1>
-
-                <figure>
-                    <img src={`${receita.pathImagem}`} className="" />
-                </figure>
+                <h1 className="CATEGORIA font-light py-1">{receita.categoria}</h1>
                 
-
-                <ul className="list-inside list-disc text-4xl">
-                    {receita.ingredientes.map((ingrediente) => (
-                        <li className="py-2">{ingrediente.nome}: {ingrediente.quantidade}</li>
-                    ))}
-                </ul>
-                <h1 className="text-4xl">Modo de Preparo: {receita.modoDePreparo}</h1>
-            </div>
-            
+                <div className="IMAGEM-E-INSTRUCOES w-3/5 flex flex-row space-x-6 px-5 py-4">
+                    <figure className="IMAGEM w-96 h-64 flex-shrink-0">
+                        <img src={`${receita.pathImagem}`} className="rounded w-full h-full object-cover" />
+                    </figure>
+                    <div className="INSTRUCOES flex flex-col space-y-5">
+                        <h1 className="text-2xl"><b>Modo de Preparo:</b> {receita.modoDePreparo}</h1>
+                        <ul className="INGREDIENTES bg-gray-300 py-2 px-5 rounded list-inside list-disc text-2xl">
+                            {receita.ingredientes.map((ingrediente) => (
+                                <li className="py-2">{ingrediente.nome}: {ingrediente.quantidade}</li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
+            </div>           
         </>
     );
 }

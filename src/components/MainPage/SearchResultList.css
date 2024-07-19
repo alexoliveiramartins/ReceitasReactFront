@@ -1,10 +1,6 @@
 .results-list {
   width: 80%;
   background-color: white;
-  display: flex;
-  box-shadow: 0px 0px 8px #ddd;
-  border-radius: 10px;
-  margin-top: 1rem;
   max-height: 300px;
   overflow-y: auto;
 }

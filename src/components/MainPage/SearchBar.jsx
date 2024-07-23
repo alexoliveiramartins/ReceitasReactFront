@@ -12,7 +12,7 @@ export const SearchBar = ({ setResults }) => {
   }, [params.nome])
   
   const fetchData = (value) => {
-    fetch('http://localhost:5000/api/receitas')
+    fetch(import.meta.env.VITE_API_KEY)
     .then((response) => response.json())
     .then((json) => {
       const results = json.filter((receita) => {

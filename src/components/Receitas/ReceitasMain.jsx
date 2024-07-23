@@ -4,7 +4,7 @@ import { fetchRecipes } from '../../fetchRecipe';
 
 export function ReceitasMain() {
     const [meals, setMeals] = useState([]);
-    const api = 'http://localhost:8080/api/receitas'
+    const api = import.meta.env.VITE_API_KEY;
     useEffect(() => {
         async function getMeals() {
             try {

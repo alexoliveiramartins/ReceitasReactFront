@@ -1,4 +1,4 @@
-alex: import { NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./SearchResult.css";
 
 export const SearchResult = ({ result }) => {

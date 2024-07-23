@@ -9,7 +9,7 @@ export function ReceitasResult() {
     const ingredientesArgumentos = window.location.search;
     console.log(ingredientesArgumentos);
     const [meals, setMeals] = useState([]);
-    const api = `http://localhost:8080/api/receitas${ingredientesArgumentos}`
+    const api = `${import.meta.env.VITE_API_KEY}${ingredientesArgumentos}`
     console.log(api);
     useEffect(() => {
         async function getMeals() {

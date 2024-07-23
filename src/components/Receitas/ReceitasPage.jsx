@@ -8,7 +8,7 @@ export default function ReceitasPage(){
     const { nome } = useParams();
     const [receita, setReceita] = useState(null);
 
-    const api = `http://localhost:8080/api/receitas/${nome}`
+    const api = `${import.meta.env.VITE_API_KEY}/${nome}`
     useEffect(() => {
         async function loadProduct(){
             try {

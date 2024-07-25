@@ -1,5 +1,6 @@
 .results-list {
   width: 80%;
+  border-radius: 10px;
   background-color: white;
   max-height: 300px;
   overflow-y: auto;

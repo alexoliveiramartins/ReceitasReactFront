@@ -12,7 +12,7 @@ export const SearchBar = ({ setResults }) => {
   }, [params.nome])
   
   const fetchData = (value) => {
-    fetch(import.meta.env.VITE_API_KEY)
+    fetch('http://localhost:8080/api/receitas')
     .then((response) => response.json())
     .then((json) => {
       const results = json.filter((receita) => {
@@ -20,7 +20,9 @@ export const SearchBar = ({ setResults }) => {
           value &&
           receita &&
           receita.nome &&
-          receita.nome.toLowerCase().includes(value)
+          (receita.nome.toLowerCase().includes(value) ||
+          receita.nome.includes(value) ||
+          receita.nome.toUpperCase().includes(value))
           );
         });
         setResults(results);
@@ -36,7 +38,7 @@ export const SearchBar = ({ setResults }) => {
   return (
     <div className="input-wrapper">
       <input
-        placeholder="Pesquisar"
+        placeholder="Pesquisar receitas"
         value={input}
         onChange={(e) => handleChange(e.target.value)}
       />

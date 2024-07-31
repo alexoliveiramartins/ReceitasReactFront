@@ -26,7 +26,7 @@ export default function Header({title}){
 
         <nav className="flex items-center p-5">
           <ul className="flex gap-2.5 font-sans text-2xl">
-            <li><NavLink to="/receitas">receitas</NavLink></li>
+            <li><NavLink to="/receitas">Receitas</NavLink></li>
           </ul>
         </nav>
      </header>

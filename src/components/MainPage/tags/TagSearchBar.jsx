@@ -54,7 +54,7 @@ export default function Tag(){
             <div className="flex flex-row w-10/12 space-x-2">
                 <input 
                     type="text" 
-                    placeholder="Adicione um ingrediente" 
+                    placeholder="Adicione ingrediente..." 
                     onKeyUp={addTags}
                     className="px-5 bg-slate-50 shadow h-12 border-solid border-0 rounded border-2 border-white outline-transparent"
                 />

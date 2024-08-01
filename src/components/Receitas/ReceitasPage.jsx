@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchRecipes } from "../../fetchRecipe";
 import { useParams } from "react-router-dom";
-import "./ReceitasPage.css";
 
 
 export default function ReceitasPage(){

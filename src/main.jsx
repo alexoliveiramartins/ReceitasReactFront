@@ -6,7 +6,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import { LoginMain } from './components/LoginMain.jsx';
 import NoPage from './components/NoPage.jsx';
 import { ReceitasMain } from './components/Receitas/ReceitasMain.jsx';
 import { Inicio } from './components/MainPage/Inicio.jsx';
@@ -25,14 +24,6 @@ const router = createBrowserRouter([
       {
         path: "/receitas",
         element: <ReceitasMain />
-      },
-      {
-        path: "/login",
-        element: <LoginMain />
-      },
-      {
-        path: "/register",
-        element: <h1>Registro</h1>
       },
       {
         path: "/receitas/:nome",
